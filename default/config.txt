@@ -1,0 +1,23 @@
+color=GOLD
+time=15
+reminders=2
+ban:
+  command=/ban $1
+  answer=51%
+  yes=80%
+  time=30
+  reminders=5
+day:
+  nobodyinworlds=island2_nether
+  nobodyinregions=rpzone
+  command=/time day $world
+  answer=1%
+  yes=100%
+night:
+  command=/time night $world
+  answer=33%
+  yes=100%
+sun:
+  command=/weather $world sun
+  answer=1%
+  yes=100%

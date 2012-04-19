@@ -1,0 +1,15 @@
++player votes for +vote: +remain seconds left=+player vote pour +vote: +remain secondes pour voter
+Only players can vote=Seuls les joueurs peuvent voter
+Unknown vote +vote=Vote inconnu +vote
+Vote for +vote: +remain seconds left=Vote pour +vote: +remain secondes pour voter
+Vote for +vote had no enough answers: only +count / +total=Vote pour +vote n'a pas assez de réponses: +count / +total
+Vote for +vote had no enough yes: only +count / +total=Vote pour +vote n'a pas assez de votes pour: +count / +total
+Vote for +vote in progress. You can't start another vote=Vote +vote en cours. Impossible de démarrer un autre vote
+Vote for +vote result is yes=Vote pour +vote accepté
+You can vote for +votes=Vous pouvez voter pour +votes
+You can vote with /yes or /no=Vous pouvez voter avec /yes ou /no
+You can't vote: there are people into a protected region=Vous ne pouvez pas voter: il y a des joueurs dans une région protégée
+You can't vote: there are people into a protected world=Vous ne pouvez pas voter: il y a des joueurs dans un monde protégé
+You have nothing to vote for=Aucun vote en cours
+You vote no for +vote=Vous votez non pour +vote
+You vote yes for +vote=Vous votez oui pour +vote

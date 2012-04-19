@@ -1,0 +1,35 @@
+name: RealVotes
+main: fr.crafter.tickleman.realvotes.RealVotes
+version: 0.04
+website: http://plugins.crafter.fr/tickleman/RealVotes/
+author: tickleman
+depend: []
+commands:
+  vote:
+    description: Start a vote, list possible votes
+    usage: vote [<what>]
+  votereload:
+    description: Reload configuration for votes
+    usage: votereload
+  "yes":
+    description: Vote yes for current vote
+    usage: "yes"
+  "no":
+    description: Vote no for current vote
+    usage: "no"
+permissions:
+  vote.*:
+    description: Gives access to all votes
+    children:
+      vote.list:
+        description: Gives access to available votes listing
+        default: true
+      vote.no:
+        description: Gives access to vote no
+        default: true
+      vote.reload:
+        description: Gives access to reload vote config files
+        default: op
+      vote.yes:
+        description: Gives access to vote yes
+        default: true
