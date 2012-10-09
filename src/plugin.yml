@@ -1,6 +1,6 @@
 name: RealVotes
 main: fr.crafter.tickleman.realvotes.RealVotes
-version: 0.04
+version: 0.90
 website: http://plugins.crafter.fr/tickleman/RealVotes/
 author: tickleman
 depend: []

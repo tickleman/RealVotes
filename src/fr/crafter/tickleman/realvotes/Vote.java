@@ -341,8 +341,8 @@ public class Vote
 	public String toString()
 	{
 		return name + " " + color + " " + command + " : "
-			+ "ans=" + answerCount + "|" + answerPercentage + "% "
-			+ "yes=" + yesCount + "|" + yesPercentage + "% "
+			+ "ans=" + getAnswerCount() + "|" + getAnswerPercentage() + "% "
+			+ "yes=" + getYesCount() + "|" + getYesPercentage() + "% "
 			+ "(" + time + "s/" + reminders + ")";
 	}
 

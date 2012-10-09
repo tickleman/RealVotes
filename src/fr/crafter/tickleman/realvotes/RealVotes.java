@@ -258,7 +258,9 @@ public class RealVotes extends JavaPlugin
 	{
 		params = new String[]{"", "", "", "", "", "", "", "", ""};
 		for (int i = 1; i < Math.min(args.length, params.length + 1); i ++) {
-			params[i - 1] = args[i];
+			if (args[i] != null) {
+				params[i - 1] = args[i];
+			}
 		}
 	}
 
@@ -337,9 +339,13 @@ public class RealVotes extends JavaPlugin
 	//---------------------------------------------------------------------------------------- voteNo
 	private void voteNo(Player player)
 	{
-		if (world.equals(player.getWorld())) {
-			results.put(player, false);
-			player.sendMessage(tr("You vote no for +vote").replace("+vote", vote.getName()));
+		if (vote != null) {
+			if (world.equals(player.getWorld())) {
+				results.put(player, false);
+				player.sendMessage(tr("You vote no for +vote").replace("+vote", vote.getName()));
+			} else {
+				player.sendMessage(tr("You have nothing to vote for"));
+			}
 		} else {
 			player.sendMessage(tr("You have nothing to vote for"));
 		}
@@ -360,9 +366,13 @@ public class RealVotes extends JavaPlugin
 	//--------------------------------------------------------------------------------------- voteYes
 	private void voteYes(Player player)
 	{
-		if (world.equals(player.getWorld())) {
-			results.put(player, true);
-			player.sendMessage(tr("You vote yes for +vote").replace("+vote", vote.getName()));
+		if (vote != null) {
+			if (world.equals(player.getWorld())) {
+				results.put(player, true);
+				player.sendMessage(tr("You vote yes for +vote").replace("+vote", vote.getName()));
+			} else {
+				player.sendMessage(tr("You have nothing to vote for"));
+			}
 		} else {
 			player.sendMessage(tr("You have nothing to vote for"));
 		}
