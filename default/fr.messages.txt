@@ -1,5 +1,6 @@
 +player votes for +vote: +remain seconds left=+player vote pour +vote: +remain secondes pour voter
 Only players can vote=Seuls les joueurs peuvent voter
+There is already a running vote=Il y a déjà un vote en cours
 Unknown vote +vote=Vote inconnu +vote
 Vote for +vote: +remain seconds left=Vote pour +vote: +remain secondes pour voter
 Vote for +vote had no enough answers: only +count / +total=Vote pour +vote n'a pas assez de réponses: +count / +total

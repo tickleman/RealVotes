@@ -46,11 +46,21 @@ public class RealVotes extends JavaPlugin
 	//--------------------------------------------------------------------------------------- endVote
 	public boolean endVote()
 	{
+		Integer playersCount = 0;
+		for (Player player : world.getPlayers()) {
+			if (player.getClass().getSimpleName().equals("CraftPlayer")) {
+				playersCount ++;
+			}
+		}
 		boolean result = true;
 		Integer yesCount = 0;
 		for (Boolean voted : results.values()) {
 			if (voted) yesCount ++;
 		}
+		System.out.println(
+			"end " + vote.toString() + " yes=" + yesCount + " votes=" + results.size()
+			+ " players=" + playersCount
+		);
 		if (result && (vote.getAnswerCount() != null)) {
 			if (vote.getAnswerCount() > results.size()) {
 				Utils.broadcastWorld(
@@ -64,13 +74,13 @@ public class RealVotes extends JavaPlugin
 		}
 		if (result && (vote.getAnswerPercentage() != null)) {
 			if (
-				(world.getPlayers().size() == 0)
-				|| (vote.getAnswerPercentage() > ((results.size() * 100) / world.getPlayers().size()))
+				(playersCount == 0)
+				|| (vote.getAnswerPercentage() > ((results.size() * 100) / playersCount))
 			) {
 				Utils.broadcastWorld(
 					world, tr("Vote for +vote had no enough answers: only +count / +total")
 					.replace("+vote", vote.getName())
-					.replace("+count", ((results.size() * 100) / world.getPlayers().size()) + "%")
+					.replace("+count", ((results.size() * 100) / playersCount) + "%")
 					.replace("+total", vote.getAnswerPercentage() + "%")
 				);
 				result = false;
@@ -277,7 +287,6 @@ public class RealVotes extends JavaPlugin
 	//------------------------------------------------------------------------------------- startVote
 	public void startVote(Player player, Vote vote)
 	{
-		System.out.println(vote.toString());
 		if (!vote.checkNobodyInRegions(getServer(), player.getWorld())) {
 			player.sendMessage(tr("You can't vote: there are people into a protected region"));
 			clearVote();
@@ -297,6 +306,7 @@ public class RealVotes extends JavaPlugin
 			);
 			Utils.broadcastWorld(player, tr("You can vote with /yes or /no"));
 			scheduleVote(1);
+			System.out.println("start " + vote.toString());
 		}
 	}
 
